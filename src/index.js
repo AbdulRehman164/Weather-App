@@ -9,6 +9,7 @@ const searchWeatherButton = document.getElementById('search-weather-button');
 
 searchWeatherButton.addEventListener('click', () => {
   getWeather(searchWeatherInput.value).then((data) => {
-    console.log(data);
+    if (data instanceof Error) console.log(data.message);
+    else console.log(data);
   });
 });
