@@ -1,4 +1,5 @@
 import getWeather from './Weather';
+import './styles/style.css';
 
 getWeather('vehari').then((data) => {
   console.log(data);
