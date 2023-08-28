@@ -18,3 +18,11 @@ body {
   margin-top: 1.5rem;
   float: right;
 }
+
+.icon img {
+  filter: grayscale(100%) brightness(500%);
+}
+
+.weather-secondary {
+  float: right;
+}
