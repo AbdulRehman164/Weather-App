@@ -3,7 +3,8 @@ export default function renderUI(data) {
   const { forecast } = data;
   const { location } = data;
 
-  //   const cityDetailsSection = document.getElementById('city-details');
+  renderTempIn(current);
+
   const cityNamePara = document.getElementById('city-name');
   const dataTimePara = document.getElementById('date-time');
 
@@ -14,19 +15,9 @@ export default function renderUI(data) {
 
   iconSpan.innerHTML = `<img src='${current.condition.icon}'></img>`;
 
-  const temperatureSpan = document.getElementById('temperature');
-
-  temperatureSpan.textContent = `${current.temp_c}°C`;
-
   const weatherInTextPara = document.getElementById('weather-in-text');
 
   weatherInTextPara.textContent = current.condition.text;
-
-  const temperatureFeelsLikePara = document.getElementById(
-    'temperature-feelslike'
-  );
-
-  temperatureFeelsLikePara.textContent = `Feels like ${current.feelslike_c}°C`;
 
   const windValue = document.getElementById('wind-value');
   windValue.textContent = `${current.wind_mph}m/h`;
@@ -54,4 +45,35 @@ export default function renderUI(data) {
 
   const moonState = document.getElementById('moon-state-value');
   moonState.textContent = forecast.forecastday[0].astro.moon_phase;
+}
+
+function renderTempIn(current) {
+  let selected = document.querySelector('input[name="temp-in"]:checked');
+  const temperatureSpan = document.getElementById('temperature');
+  const temperatureFeelsLikePara = document.getElementById(
+    'temperature-feelslike'
+  );
+
+  // initial rendering
+
+  temperatureSpan.textContent = `${current[selected.dataset.temp]}${
+    selected.value
+  }`;
+  temperatureFeelsLikePara.textContent = `Feels like ${
+    current[selected.dataset.feelslike]
+  }${selected.value}`;
+
+  const tempIns = document.querySelectorAll('input[name="temp-in"]');
+
+  tempIns.forEach((tempIn) => {
+    tempIn.addEventListener('input', () => {
+      selected = document.querySelector('input[name="temp-in"]:checked');
+      temperatureSpan.textContent = `${current[selected.dataset.temp]}${
+        selected.value
+      }`;
+      temperatureFeelsLikePara.textContent = `Feels like ${
+        current[selected.dataset.feelslike]
+      }${selected.value}`;
+    });
+  });
 }
