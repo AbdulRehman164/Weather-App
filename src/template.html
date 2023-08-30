@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <%= htmlWebpackPlugin.options.title %>
+        Weather App
     </title>
 </head>
 
 <body>
     <section class="search-weather-section">
-        <input type="text" id="search-weather-input" class="search-weather-input">
-        <button id="search-weather-button" class="search-weather-button">search</button>
+        <input type="text" id="search-weather-input" class="search-weather-input" placeholder="Search Location...">
+        <button id="search-weather-button" class="search-weather-button">
+            <img src="./assets/search-icon.png" alt="search">
+        </button>
     </section>
 
     <section class="temp-toggle">
@@ -23,68 +25,70 @@
         <label for="fahrenheit">°F</label>
     </section>
 
-    <section class="city-details" id="city-details">
-        <p class="city-name" id="city-name">Vehari, Pakistan</p>
-        <p class="date-time" id="date-time">Saturday 26 Aug 2023 | 5:34pm</p>
-    </section>
+    <main>
 
-
-    <section class="weather-details">
-        <section class="weather-main">
-            <p class="temperature-main">
-                <span class="icon" id="icon">icon</span>
-                <span class="temperature" id="temperature">12°C</span>
-
-            </p>
-            <p class="weather-in-text" id="weather-in-text">Broken Clouds</p>
-            <p class="temperature-feelslike" id="temperature-feelslike">
-                Feels like 10°C
-            </p>
+        <section class="city-details" id="city-details">
+            <p class="city-name" id="city-name">Vehari, Pakistan</p>
+            <p class="date-time" id="date-time">Saturday 26 Aug 2023 | 5:34pm</p>
         </section>
 
 
-        <ul class="weather-secondary">
-            <li>
-                <p class="property wind">Wind</p>
-                <p class="value wind-value" id="wind-value">2m/h</p>
-            </li>
-            <li>
-                <p class="property humidity">Humidity</p>
-                <p class="value humidity-value" id="humidity-value">43%</p>
-            </li>
+        <section class="weather-details">
+            <section class="weather-main">
+                <p class="temperature-main">
+                    <span class="icon" id="icon">icon</span>
+                    <span class="temperature" id="temperature">12°C</span>
 
-            <li>
-                <p class="property uv-index">UV Index</p>
-                <p class="value uv-index-value" id="uv-index-value">1</p>
-            </li>
-            <li>
-                <p class="property visibility">Visibility</p>
-                <p class="value visibility-value" id="visibility-value">10km</p>
-            </li>
-            <li>
-                <p class="property cloudiness">Cloudiness</p>
-                <p class="value cloudiness-value" id="cloudiness-value">58%</p>
-            </li>
-            <li>
-                <p class="property chance-of-rain">Chance Of Rain</p>
-                <p class="value chance-of-rain-value" id="chance-of-rain-value">63%</p>
-            </li>
-            <li>
-                <p class="property sunrise">Sunrise</p>
-                <p class="value sunrise-value" id="sunrise-value">5:44</p>
-            </li>
-            <li>
-                <p class="property sunset">sunset</p>
-                <p class="value sunset-value" id="sunset-value">18:41</p>
-            </li>
-            <li>
-                <p class="property moon-state">Moon state</p>
-                <p class="value moon-state-value" id="moon-state-value">Waxing Gibbous</p>
-            </li>
-        </ul>
+                </p>
+                <p class="weather-in-text" id="weather-in-text">Broken Clouds</p>
+                <p class="temperature-feelslike" id="temperature-feelslike">
+                    Feels like 10°C
+                </p>
+            </section>
 
-    </section>
 
+            <ul class="weather-secondary">
+                <li>
+                    <p class="property wind">Wind</p>
+                    <p class="value wind-value" id="wind-value">2m/h</p>
+                </li>
+                <li>
+                    <p class="property humidity">Humidity</p>
+                    <p class="value humidity-value" id="humidity-value">43%</p>
+                </li>
+
+                <li>
+                    <p class="property uv-index">UV Index</p>
+                    <p class="value uv-index-value" id="uv-index-value">1</p>
+                </li>
+                <li>
+                    <p class="property visibility">Visibility</p>
+                    <p class="value visibility-value" id="visibility-value">10km</p>
+                </li>
+                <li>
+                    <p class="property cloudiness">Cloudiness</p>
+                    <p class="value cloudiness-value" id="cloudiness-value">58%</p>
+                </li>
+                <li>
+                    <p class="property chance-of-rain">Chance Of Rain</p>
+                    <p class="value chance-of-rain-value" id="chance-of-rain-value">63%</p>
+                </li>
+                <li>
+                    <p class="property sunrise">Sunrise</p>
+                    <p class="value sunrise-value" id="sunrise-value">5:44</p>
+                </li>
+                <li>
+                    <p class="property sunset">sunset</p>
+                    <p class="value sunset-value" id="sunset-value">18:41</p>
+                </li>
+                <li>
+                    <p class="property moon-state">Moon state</p>
+                    <p class="value moon-state-value" id="moon-state-value">Waxing Gibbous</p>
+                </li>
+            </ul>
+
+        </section>
+    </main>
 
 </body>
 

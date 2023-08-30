@@ -12,17 +12,93 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
+  font-weight: bold;
+  padding: 1em;
+  overflow: hidden;
 }
 
 .search-weather-section {
-  margin-top: 1.5rem;
   float: right;
+  border-bottom: 3px solid white;
+  padding: 0.2em;
+}
+.search-weather-input {
+  appearance: none;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  width: 180px;
+  font-weight: 600;
+}
+
+.search-weather-input::placeholder {
+  font-weight: 600;
+  color: white;
+}
+
+.search-weather-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.search-weather-button img {
+  height: 1.5em;
+}
+
+.search-weather-button:active {
+  scale: 1.1;
 }
 
 .icon img {
   filter: grayscale(100%) brightness(500%);
 }
 
+.city-name {
+  font-size: 1.5rem;
+}
+.date-time {
+  font-size: 0.7rem;
+}
+
+main {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .weather-secondary {
-  float: right;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+.property {
+  color: rgb(196, 195, 195);
+}
+.value {
+  font-size: 1.2rem;
+}
+.weather-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.weather-details {
+  display: flex;
+  gap: 5rem;
+  font-size: 1.1rem;
+}
+
+.temperature-main {
+  display: flex;
+  align-items: center;
+}
+
+.temperature-main .temperature {
+  font-size: 3rem;
 }
