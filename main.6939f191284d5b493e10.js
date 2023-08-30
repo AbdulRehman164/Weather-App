@@ -24,6 +24,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/bg.jpg */ "./src/assets/bg.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Fasthand&family=Nunito&family=Roboto&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `* {
@@ -33,9 +34,103 @@ ___CSS_LOADER_EXPORT___.push([module.id, `* {
 }
 
 body {
+  font-family: 'Nunito', 'Roboto', sans-serif;
+  height: 100vh;
   background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  font-weight: bold;
+  padding: 1em;
+  overflow: hidden;
 }
-`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAAA;EACE,SAAS;EACT,UAAU;EACV,sBAAsB;AACxB;;AAEA;EACE,yDAAyC;AAC3C","sourcesContent":["* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-image: url('../assets/bg.jpg');\r\n}\r\n"],"sourceRoot":""}]);
+
+.search-weather-section {
+  float: right;
+  border-bottom: 3px solid white;
+  padding: 0.2em;
+}
+.search-weather-input {
+  appearance: none;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  width: 180px;
+  font-weight: 600;
+}
+
+.search-weather-input::placeholder {
+  font-weight: 600;
+  color: white;
+}
+
+.search-weather-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.search-weather-button img {
+  height: 1.5em;
+}
+
+.search-weather-button:active {
+  scale: 1.1;
+}
+
+.icon img {
+  filter: grayscale(100%) brightness(500%);
+}
+
+.city-name {
+  font-size: 1.5rem;
+}
+.date-time {
+  font-size: 0.7rem;
+}
+
+main {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.weather-secondary {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+.property {
+  color: rgb(196, 195, 195);
+}
+.value {
+  font-size: 1.2rem;
+}
+.weather-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.weather-details {
+  display: flex;
+  gap: 5rem;
+  font-size: 1.1rem;
+}
+
+.temperature-main {
+  display: flex;
+  align-items: center;
+}
+
+.temperature-main .temperature {
+  font-size: 3rem;
+}
+`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AACA;EACE,SAAS;EACT,UAAU;EACV,sBAAsB;AACxB;;AAEA;EACE,2CAA2C;EAC3C,aAAa;EACb,yDAAyC;EACzC,sBAAsB;EACtB,4BAA4B;EAC5B,YAAY;EACZ,iBAAiB;EACjB,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,YAAY;EACZ,8BAA8B;EAC9B,cAAc;AAChB;AACA;EACE,gBAAgB;EAChB,6BAA6B;EAC7B,aAAa;EACb,YAAY;EACZ,YAAY;EACZ,iBAAiB;EACjB,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;EAChB,YAAY;AACd;;AAEA;EACE,uBAAuB;EACvB,YAAY;EACZ,eAAe;AACjB;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,UAAU;AACZ;;AAEA;EACE,wCAAwC;AAC1C;;AAEA;EACE,iBAAiB;AACnB;AACA;EACE,iBAAiB;AACnB;;AAEA;EACE,WAAW;EACX,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;;AAEA;EACE,gBAAgB;EAChB,aAAa;EACb,kCAAkC;EAClC,+BAA+B;EAC/B,SAAS;AACX;AACA;EACE,yBAAyB;AAC3B;AACA;EACE,iBAAiB;AACnB;AACA;EACE,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;AACA;EACE,aAAa;EACb,SAAS;EACT,iBAAiB;AACnB;;AAEA;EACE,aAAa;EACb,mBAAmB;AACrB;;AAEA;EACE,eAAe;AACjB","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Fasthand&family=Nunito&family=Roboto&display=swap');\r\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  font-family: 'Nunito', 'Roboto', sans-serif;\r\n  height: 100vh;\r\n  background-image: url('../assets/bg.jpg');\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\r\n  color: white;\r\n  font-weight: bold;\r\n  padding: 1em;\r\n  overflow: hidden;\r\n}\r\n\r\n.search-weather-section {\r\n  float: right;\r\n  border-bottom: 3px solid white;\r\n  padding: 0.2em;\r\n}\r\n.search-weather-input {\r\n  appearance: none;\r\n  background-color: transparent;\r\n  outline: none;\r\n  border: none;\r\n  color: white;\r\n  font-size: 1.1rem;\r\n  width: 180px;\r\n  font-weight: 600;\r\n}\r\n\r\n.search-weather-input::placeholder {\r\n  font-weight: 600;\r\n  color: white;\r\n}\r\n\r\n.search-weather-button {\r\n  background: transparent;\r\n  border: none;\r\n  cursor: pointer;\r\n}\r\n\r\n.search-weather-button img {\r\n  height: 1.5em;\r\n}\r\n\r\n.search-weather-button:active {\r\n  scale: 1.1;\r\n}\r\n\r\n.icon img {\r\n  filter: grayscale(100%) brightness(500%);\r\n}\r\n\r\n.city-name {\r\n  font-size: 1.5rem;\r\n}\r\n.date-time {\r\n  font-size: 0.7rem;\r\n}\r\n\r\nmain {\r\n  height: 80%;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n\r\n.weather-secondary {\r\n  list-style: none;\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr;\r\n  grid-template-rows: 1fr 1fr 1fr;\r\n  gap: 2rem;\r\n}\r\n.property {\r\n  color: rgb(196, 195, 195);\r\n}\r\n.value {\r\n  font-size: 1.2rem;\r\n}\r\n.weather-main {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n.weather-details {\r\n  display: flex;\r\n  gap: 5rem;\r\n  font-size: 1.1rem;\r\n}\r\n\r\n.temperature-main {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.temperature-main .temperature {\r\n  font-size: 3rem;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -517,6 +612,99 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/UI.js":
+/*!*******************!*\
+  !*** ./src/UI.js ***!
+  \*******************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ renderUI)
+/* harmony export */ });
+function renderUI(data) {
+  const { current } = data;
+  const { forecast } = data;
+  const { location } = data;
+
+  renderTempIn(current);
+
+  const cityNamePara = document.getElementById('city-name');
+  const dataTimePara = document.getElementById('date-time');
+
+  cityNamePara.textContent = `${location.name},${location.country}`;
+  dataTimePara.textContent = current.last_updated;
+
+  const iconSpan = document.getElementById('icon');
+
+  iconSpan.innerHTML = `<img src='${current.condition.icon}'></img>`;
+
+  const weatherInTextPara = document.getElementById('weather-in-text');
+
+  weatherInTextPara.textContent = current.condition.text;
+
+  const windValue = document.getElementById('wind-value');
+  windValue.textContent = `${current.wind_mph}m/h`;
+
+  const humidityValue = document.getElementById('humidity-value');
+  humidityValue.textContent = `${current.humidity}%`;
+
+  const uvIndexValue = document.getElementById('uv-index-value');
+  uvIndexValue.textContent = current.uv;
+
+  const visibilityValue = document.getElementById('visibility-value');
+  visibilityValue.textContent = `${current.vis_km}km`;
+
+  const cloudiness = document.getElementById('cloudiness-value');
+  cloudiness.textContent = `${current.cloud}%`;
+
+  const chanceOfRain = document.getElementById('chance-of-rain-value');
+  chanceOfRain.textContent = `${forecast.forecastday[0].day.daily_chance_of_rain}%`;
+
+  const sunrise = document.getElementById('sunrise-value');
+  sunrise.textContent = forecast.forecastday[0].astro.sunrise;
+
+  const sunset = document.getElementById('sunset-value');
+  sunset.textContent = forecast.forecastday[0].astro.sunset;
+
+  const moonState = document.getElementById('moon-state-value');
+  moonState.textContent = forecast.forecastday[0].astro.moon_phase;
+}
+
+function renderTempIn(current) {
+  let selected = document.querySelector('input[name="temp-in"]:checked');
+  const temperatureSpan = document.getElementById('temperature');
+  const temperatureFeelsLikePara = document.getElementById(
+    'temperature-feelslike'
+  );
+
+  // initial rendering
+
+  temperatureSpan.textContent = `${current[selected.dataset.temp]}${
+    selected.value
+  }`;
+  temperatureFeelsLikePara.textContent = `Feels like ${
+    current[selected.dataset.feelslike]
+  }${selected.value}`;
+
+  const tempIns = document.querySelectorAll('input[name="temp-in"]');
+
+  tempIns.forEach((tempIn) => {
+    tempIn.addEventListener('input', () => {
+      selected = document.querySelector('input[name="temp-in"]:checked');
+      temperatureSpan.textContent = `${current[selected.dataset.temp]}${
+        selected.value
+      }`;
+      temperatureFeelsLikePara.textContent = `Feels like ${
+        current[selected.dataset.feelslike]
+      }${selected.value}`;
+    });
+  });
+}
+
+
+/***/ }),
+
 /***/ "./src/Weather.js":
 /*!************************!*\
   !*** ./src/Weather.js ***!
@@ -705,12 +893,15 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Weather */ "./src/Weather.js");
-/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/style.css */ "./src/styles/style.css");
+/* harmony import */ var _UI__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UI */ "./src/UI.js");
+/* harmony import */ var _Weather__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Weather */ "./src/Weather.js");
+/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/style.css */ "./src/styles/style.css");
 
 
 
-(0,_Weather__WEBPACK_IMPORTED_MODULE_0__["default"])('vehari').then((data) => {
+
+(0,_Weather__WEBPACK_IMPORTED_MODULE_1__["default"])('vehari').then((data) => {
+  (0,_UI__WEBPACK_IMPORTED_MODULE_0__["default"])(data);
   console.log(data);
 });
 
@@ -718,9 +909,12 @@ const searchWeatherInput = document.getElementById('search-weather-input');
 const searchWeatherButton = document.getElementById('search-weather-button');
 
 searchWeatherButton.addEventListener('click', () => {
-  (0,_Weather__WEBPACK_IMPORTED_MODULE_0__["default"])(searchWeatherInput.value).then((data) => {
+  (0,_Weather__WEBPACK_IMPORTED_MODULE_1__["default"])(searchWeatherInput.value).then((data) => {
     if (data instanceof Error) console.log(data.message);
-    else console.log(data);
+    else {
+      (0,_UI__WEBPACK_IMPORTED_MODULE_0__["default"])(data);
+      console.log(data);
+    }
   });
 });
 
@@ -728,4 +922,4 @@ searchWeatherButton.addEventListener('click', () => {
 
 /******/ })()
 ;
-//# sourceMappingURL=main.bc868c0b83065b33dd52.js.map
+//# sourceMappingURL=main.6939f191284d5b493e10.js.map
