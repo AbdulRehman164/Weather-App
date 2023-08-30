@@ -17,6 +17,32 @@ body {
   overflow: hidden;
 }
 
+.temp-toggle {
+  display: flex;
+  gap: 0.5rem;
+}
+
+input[name='temp-in'] {
+  appearance: none;
+}
+
+.temp-toggle label {
+  height: 2rem;
+  width: 5rem;
+  background: rgb(27, 23, 23);
+  color: darkgoldenrod;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  border-radius: 30%;
+  cursor: pointer;
+}
+
+input[name='temp-in']:checked + label {
+  border: 2px solid darkgoldenrod;
+}
+
 .search-weather-section {
   float: right;
   border-bottom: 3px solid white;
