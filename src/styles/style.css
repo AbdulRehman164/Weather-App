@@ -128,3 +128,10 @@ main {
 .temperature-main .temperature {
   font-size: 3rem;
 }
+
+.loading-img {
+  display: none;
+  position: absolute;
+  right: 47%;
+  top: 30%;
+}

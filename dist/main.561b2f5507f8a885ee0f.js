@@ -45,6 +45,32 @@ body {
   overflow: hidden;
 }
 
+.temp-toggle {
+  display: flex;
+  gap: 0.5rem;
+}
+
+input[name='temp-in'] {
+  appearance: none;
+}
+
+.temp-toggle label {
+  height: 2rem;
+  width: 5rem;
+  background: rgb(27, 23, 23);
+  color: darkgoldenrod;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  border-radius: 30%;
+  cursor: pointer;
+}
+
+input[name='temp-in']:checked + label {
+  border: 2px solid darkgoldenrod;
+}
+
 .search-weather-section {
   float: right;
   border-bottom: 3px solid white;
@@ -130,7 +156,14 @@ main {
 .temperature-main .temperature {
   font-size: 3rem;
 }
-`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AACA;EACE,SAAS;EACT,UAAU;EACV,sBAAsB;AACxB;;AAEA;EACE,2CAA2C;EAC3C,aAAa;EACb,yDAAyC;EACzC,sBAAsB;EACtB,4BAA4B;EAC5B,YAAY;EACZ,iBAAiB;EACjB,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,YAAY;EACZ,8BAA8B;EAC9B,cAAc;AAChB;AACA;EACE,gBAAgB;EAChB,6BAA6B;EAC7B,aAAa;EACb,YAAY;EACZ,YAAY;EACZ,iBAAiB;EACjB,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;EAChB,YAAY;AACd;;AAEA;EACE,uBAAuB;EACvB,YAAY;EACZ,eAAe;AACjB;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,UAAU;AACZ;;AAEA;EACE,wCAAwC;AAC1C;;AAEA;EACE,iBAAiB;AACnB;AACA;EACE,iBAAiB;AACnB;;AAEA;EACE,WAAW;EACX,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;;AAEA;EACE,gBAAgB;EAChB,aAAa;EACb,kCAAkC;EAClC,+BAA+B;EAC/B,SAAS;AACX;AACA;EACE,yBAAyB;AAC3B;AACA;EACE,iBAAiB;AACnB;AACA;EACE,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;AACA;EACE,aAAa;EACb,SAAS;EACT,iBAAiB;AACnB;;AAEA;EACE,aAAa;EACb,mBAAmB;AACrB;;AAEA;EACE,eAAe;AACjB","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Fasthand&family=Nunito&family=Roboto&display=swap');\r\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  font-family: 'Nunito', 'Roboto', sans-serif;\r\n  height: 100vh;\r\n  background-image: url('../assets/bg.jpg');\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\r\n  color: white;\r\n  font-weight: bold;\r\n  padding: 1em;\r\n  overflow: hidden;\r\n}\r\n\r\n.search-weather-section {\r\n  float: right;\r\n  border-bottom: 3px solid white;\r\n  padding: 0.2em;\r\n}\r\n.search-weather-input {\r\n  appearance: none;\r\n  background-color: transparent;\r\n  outline: none;\r\n  border: none;\r\n  color: white;\r\n  font-size: 1.1rem;\r\n  width: 180px;\r\n  font-weight: 600;\r\n}\r\n\r\n.search-weather-input::placeholder {\r\n  font-weight: 600;\r\n  color: white;\r\n}\r\n\r\n.search-weather-button {\r\n  background: transparent;\r\n  border: none;\r\n  cursor: pointer;\r\n}\r\n\r\n.search-weather-button img {\r\n  height: 1.5em;\r\n}\r\n\r\n.search-weather-button:active {\r\n  scale: 1.1;\r\n}\r\n\r\n.icon img {\r\n  filter: grayscale(100%) brightness(500%);\r\n}\r\n\r\n.city-name {\r\n  font-size: 1.5rem;\r\n}\r\n.date-time {\r\n  font-size: 0.7rem;\r\n}\r\n\r\nmain {\r\n  height: 80%;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n\r\n.weather-secondary {\r\n  list-style: none;\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr;\r\n  grid-template-rows: 1fr 1fr 1fr;\r\n  gap: 2rem;\r\n}\r\n.property {\r\n  color: rgb(196, 195, 195);\r\n}\r\n.value {\r\n  font-size: 1.2rem;\r\n}\r\n.weather-main {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n.weather-details {\r\n  display: flex;\r\n  gap: 5rem;\r\n  font-size: 1.1rem;\r\n}\r\n\r\n.temperature-main {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.temperature-main .temperature {\r\n  font-size: 3rem;\r\n}\r\n"],"sourceRoot":""}]);
+
+/* .loading-img {
+  display: none;
+  position: absolute;
+  right: 47%;
+  top: 30%;
+} */
+`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AACA;EACE,SAAS;EACT,UAAU;EACV,sBAAsB;AACxB;;AAEA;EACE,2CAA2C;EAC3C,aAAa;EACb,yDAAyC;EACzC,sBAAsB;EACtB,4BAA4B;EAC5B,YAAY;EACZ,iBAAiB;EACjB,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,aAAa;EACb,WAAW;AACb;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,YAAY;EACZ,WAAW;EACX,2BAA2B;EAC3B,oBAAoB;EACpB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,iBAAiB;EACjB,kBAAkB;EAClB,eAAe;AACjB;;AAEA;EACE,+BAA+B;AACjC;;AAEA;EACE,YAAY;EACZ,8BAA8B;EAC9B,cAAc;AAChB;AACA;EACE,gBAAgB;EAChB,6BAA6B;EAC7B,aAAa;EACb,YAAY;EACZ,YAAY;EACZ,iBAAiB;EACjB,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;EAChB,YAAY;AACd;;AAEA;EACE,uBAAuB;EACvB,YAAY;EACZ,eAAe;AACjB;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,UAAU;AACZ;;AAEA;EACE,wCAAwC;AAC1C;;AAEA;EACE,iBAAiB;AACnB;AACA;EACE,iBAAiB;AACnB;;AAEA;EACE,WAAW;EACX,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;;AAEA;EACE,gBAAgB;EAChB,aAAa;EACb,kCAAkC;EAClC,+BAA+B;EAC/B,SAAS;AACX;AACA;EACE,yBAAyB;AAC3B;AACA;EACE,iBAAiB;AACnB;AACA;EACE,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;AACA;EACE,aAAa;EACb,SAAS;EACT,iBAAiB;AACnB;;AAEA;EACE,aAAa;EACb,mBAAmB;AACrB;;AAEA;EACE,eAAe;AACjB;;AAEA;;;;;GAKG","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Fasthand&family=Nunito&family=Roboto&display=swap');\r\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  font-family: 'Nunito', 'Roboto', sans-serif;\r\n  height: 100vh;\r\n  background-image: url('../assets/bg.jpg');\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\r\n  color: white;\r\n  font-weight: bold;\r\n  padding: 1em;\r\n  overflow: hidden;\r\n}\r\n\r\n.temp-toggle {\r\n  display: flex;\r\n  gap: 0.5rem;\r\n}\r\n\r\ninput[name='temp-in'] {\r\n  appearance: none;\r\n}\r\n\r\n.temp-toggle label {\r\n  height: 2rem;\r\n  width: 5rem;\r\n  background: rgb(27, 23, 23);\r\n  color: darkgoldenrod;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  font-size: 1.2rem;\r\n  border-radius: 30%;\r\n  cursor: pointer;\r\n}\r\n\r\ninput[name='temp-in']:checked + label {\r\n  border: 2px solid darkgoldenrod;\r\n}\r\n\r\n.search-weather-section {\r\n  float: right;\r\n  border-bottom: 3px solid white;\r\n  padding: 0.2em;\r\n}\r\n.search-weather-input {\r\n  appearance: none;\r\n  background-color: transparent;\r\n  outline: none;\r\n  border: none;\r\n  color: white;\r\n  font-size: 1.1rem;\r\n  width: 180px;\r\n  font-weight: 600;\r\n}\r\n\r\n.search-weather-input::placeholder {\r\n  font-weight: 600;\r\n  color: white;\r\n}\r\n\r\n.search-weather-button {\r\n  background: transparent;\r\n  border: none;\r\n  cursor: pointer;\r\n}\r\n\r\n.search-weather-button img {\r\n  height: 1.5em;\r\n}\r\n\r\n.search-weather-button:active {\r\n  scale: 1.1;\r\n}\r\n\r\n.icon img {\r\n  filter: grayscale(100%) brightness(500%);\r\n}\r\n\r\n.city-name {\r\n  font-size: 1.5rem;\r\n}\r\n.date-time {\r\n  font-size: 0.7rem;\r\n}\r\n\r\nmain {\r\n  height: 80%;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n\r\n.weather-secondary {\r\n  list-style: none;\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr;\r\n  grid-template-rows: 1fr 1fr 1fr;\r\n  gap: 2rem;\r\n}\r\n.property {\r\n  color: rgb(196, 195, 195);\r\n}\r\n.value {\r\n  font-size: 1.2rem;\r\n}\r\n.weather-main {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n.weather-details {\r\n  display: flex;\r\n  gap: 5rem;\r\n  font-size: 1.1rem;\r\n}\r\n\r\n.temperature-main {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.temperature-main .temperature {\r\n  font-size: 3rem;\r\n}\r\n\r\n/* .loading-img {\r\n  display: none;\r\n  position: absolute;\r\n  right: 47%;\r\n  top: 30%;\r\n} */\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -909,7 +942,10 @@ const searchWeatherInput = document.getElementById('search-weather-input');
 const searchWeatherButton = document.getElementById('search-weather-button');
 
 searchWeatherButton.addEventListener('click', () => {
+  const loadingImg = document.getElementById('loading-img');
+  loadingImg.style.display = 'block';
   (0,_Weather__WEBPACK_IMPORTED_MODULE_1__["default"])(searchWeatherInput.value).then((data) => {
+    loadingImg.style.display = 'none';
     if (data instanceof Error) console.log(data.message);
     else {
       (0,_UI__WEBPACK_IMPORTED_MODULE_0__["default"])(data);
@@ -922,4 +958,4 @@ searchWeatherButton.addEventListener('click', () => {
 
 /******/ })()
 ;
-//# sourceMappingURL=main.6939f191284d5b493e10.js.map
+//# sourceMappingURL=main.561b2f5507f8a885ee0f.js.map
