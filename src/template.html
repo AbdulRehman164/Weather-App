@@ -12,11 +12,15 @@
 
 <body>
     <img src="./assets/loading.gif" alt="testing image" class="loading-img" id="loading-img">
+
     <section class="search-weather-section">
-        <input type="text" id="search-weather-input" class="search-weather-input" placeholder="Search Location...">
-        <button id="search-weather-button" class="search-weather-button">
-            <img src="./assets/search-icon.png" alt="search">
-        </button>
+        <div>
+            <input type="text" id="search-weather-input" class="search-weather-input" placeholder="Search Location...">
+            <button id="search-weather-button" class="search-weather-button">
+                <img src="./assets/search-icon.png" alt="search">
+            </button>
+        </div>
+        <p class="error" id="error" style="display: none;"></p>
     </section>
 
     <section class="temp-toggle">
@@ -27,7 +31,7 @@
         <label for="fahrenheit">°F</label>
     </section>
 
-    <main>
+    <main style="display: none;">
 
         <section class="city-details" id="city-details">
             <p class="city-name" id="city-name"></p>

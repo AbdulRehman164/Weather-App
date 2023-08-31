@@ -42,11 +42,17 @@ input[name='temp-in'] {
 input[name='temp-in']:checked + label {
   border: 2px solid darkgoldenrod;
 }
-
 .search-weather-section {
+  float: right;
+}
+
+.search-weather-section div {
   float: right;
   border-bottom: 3px solid white;
   padding: 0.2em;
+}
+.error {
+  margin-top: 3rem;
 }
 .search-weather-input {
   appearance: none;
