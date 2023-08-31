@@ -6,9 +6,8 @@ const searchWeatherInput = document.getElementById('search-weather-input');
 const searchWeatherButton = document.getElementById('search-weather-button');
 
 function renderWeather(event) {
-  if (event.type === 'keydown') {
-    if (event.key !== 'Enter') return;
-  }
+  if (event.type === 'keydown' && event.key !== 'Enter') return;
+
   const errorPara = document.getElementById('error');
   const main = document.querySelector('main');
   const loadingImg = document.getElementById('loading-img');
