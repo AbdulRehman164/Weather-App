@@ -114,8 +114,8 @@ main {
 .weather-secondary {
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   gap: 2rem;
 }
 .property {
@@ -128,7 +128,7 @@ main {
   display: flex;
   flex-direction: column;
 }
-.weather-main div {
+.weather-details div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -214,5 +214,11 @@ main {
     position: absolute;
     right: 47%;
     top: 30%;
+  }
+}
+
+@media (max-height: 580px) {
+  .weather-secondary {
+    gap: 0.2rem;
   }
 }
