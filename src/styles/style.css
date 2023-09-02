@@ -38,17 +38,18 @@ input[name='temp-in'] {
   height: 2em;
   width: 5em;
   background: rgb(27, 23, 23);
-  color: darkgoldenrod;
+  color: gold;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: var(--fs-500);
-  border-radius: 30%;
+  border-radius: 5%;
   cursor: pointer;
+  box-shadow: 2px 2px 10px black;
 }
 
 input[name='temp-in']:checked + label {
-  border: 2px solid darkgoldenrod;
+  border: 1px solid gold;
 }
 .search-weather-section {
   float: right;
