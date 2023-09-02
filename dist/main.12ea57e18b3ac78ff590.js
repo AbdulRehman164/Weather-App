@@ -62,20 +62,21 @@ input[name='temp-in'] {
 }
 
 .temp-toggle label {
-  height: 2rem;
-  width: 5rem;
+  height: 2em;
+  width: 5em;
   background: rgb(27, 23, 23);
-  color: darkgoldenrod;
+  color: gold;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: var(--fs-500);
-  border-radius: 30%;
+  border-radius: 5%;
   cursor: pointer;
+  box-shadow: 2px 2px 10px black;
 }
 
 input[name='temp-in']:checked + label {
-  border: 2px solid darkgoldenrod;
+  border: 1px solid gold;
 }
 .search-weather-section {
   float: right;
@@ -135,13 +136,14 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 }
 
 .weather-secondary {
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   gap: 2rem;
 }
 .property {
@@ -151,6 +153,10 @@ main {
   font-size: var(--fs-500);
 }
 .weather-main {
+  display: flex;
+  flex-direction: column;
+}
+.weather-details div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -177,16 +183,74 @@ main {
   top: 30%;
 }
 
-@media (min-width: 1600px) {
+@media (max-width: 950px) {
   :root {
-    --fs-800: 4.5rem;
-    --fs-600: 2.2rem;
-    --fs-500: 1.8rem;
-    --fs-400: 1.7rem;
-    --fs-200: 1.1rem;
+    --fs-800: 2.5rem;
+    --fs-600: 1.2rem;
+    --fs-500: 0.8rem;
+    --fs-400: 0.9rem;
+    --fs-200: 0.5rem;
   }
 }
-`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAEA;EACE,cAAc;EACd,gBAAgB;EAChB,gBAAgB;EAChB,gBAAgB;EAChB,gBAAgB;AAClB;AACA;EACE,SAAS;EACT,UAAU;EACV,sBAAsB;AACxB;;AAEA;EACE,2CAA2C;EAC3C,aAAa;EACb,yDAAyC;EACzC,sBAAsB;EACtB,4BAA4B;EAC5B,YAAY;EACZ,iBAAiB;EACjB,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,aAAa;EACb,WAAW;AACb;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,YAAY;EACZ,WAAW;EACX,2BAA2B;EAC3B,oBAAoB;EACpB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,wBAAwB;EACxB,kBAAkB;EAClB,eAAe;AACjB;;AAEA;EACE,+BAA+B;AACjC;AACA;EACE,YAAY;AACd;;AAEA;EACE,YAAY;EACZ,8BAA8B;EAC9B,cAAc;AAChB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;EAChB,6BAA6B;EAC7B,aAAa;EACb,YAAY;EACZ,YAAY;EACZ,wBAAwB;EACxB,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;EAChB,YAAY;AACd;;AAEA;EACE,uBAAuB;EACvB,YAAY;EACZ,eAAe;AACjB;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,UAAU;AACZ;;AAEA;EACE,wCAAwC;AAC1C;;AAEA;EACE,wBAAwB;AAC1B;AACA;EACE,wBAAwB;AAC1B;;AAEA;EACE,WAAW;EACX,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;;AAEA;EACE,gBAAgB;EAChB,aAAa;EACb,kCAAkC;EAClC,+BAA+B;EAC/B,SAAS;AACX;AACA;EACE,yBAAyB;AAC3B;AACA;EACE,wBAAwB;AAC1B;AACA;EACE,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;AACA;EACE,aAAa;EACb,SAAS;EACT,wBAAwB;AAC1B;;AAEA;EACE,aAAa;EACb,mBAAmB;AACrB;;AAEA;EACE,wBAAwB;AAC1B;;AAEA;EACE,aAAa;EACb,kBAAkB;EAClB,UAAU;EACV,QAAQ;AACV;;AAEA;EACE;IACE,gBAAgB;IAChB,gBAAgB;IAChB,gBAAgB;IAChB,gBAAgB;IAChB,gBAAgB;EAClB;AACF","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Fasthand&family=Nunito&family=Roboto&display=swap');\r\n\r\n:root {\r\n  --fs-800: 3rem;\r\n  --fs-600: 1.5rem;\r\n  --fs-500: 1.2rem;\r\n  --fs-400: 1.1rem;\r\n  --fs-200: 0.7rem;\r\n}\r\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  font-family: 'Nunito', 'Roboto', sans-serif;\r\n  height: 100vh;\r\n  background-image: url('../assets/bg.jpg');\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\r\n  color: white;\r\n  font-weight: bold;\r\n  padding: 1em;\r\n  overflow: hidden;\r\n}\r\n\r\n.temp-toggle {\r\n  display: flex;\r\n  gap: 0.5rem;\r\n}\r\n\r\ninput[name='temp-in'] {\r\n  appearance: none;\r\n}\r\n\r\n.temp-toggle label {\r\n  height: 2rem;\r\n  width: 5rem;\r\n  background: rgb(27, 23, 23);\r\n  color: darkgoldenrod;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  font-size: var(--fs-500);\r\n  border-radius: 30%;\r\n  cursor: pointer;\r\n}\r\n\r\ninput[name='temp-in']:checked + label {\r\n  border: 2px solid darkgoldenrod;\r\n}\r\n.search-weather-section {\r\n  float: right;\r\n}\r\n\r\n.search-weather-section div {\r\n  float: right;\r\n  border-bottom: 3px solid white;\r\n  padding: 0.2em;\r\n}\r\n.error {\r\n  margin-top: 3rem;\r\n}\r\n.search-weather-input {\r\n  appearance: none;\r\n  background-color: transparent;\r\n  outline: none;\r\n  border: none;\r\n  color: white;\r\n  font-size: var(--fs-400);\r\n  width: 180px;\r\n  font-weight: 600;\r\n}\r\n\r\n.search-weather-input::placeholder {\r\n  font-weight: 600;\r\n  color: white;\r\n}\r\n\r\n.search-weather-button {\r\n  background: transparent;\r\n  border: none;\r\n  cursor: pointer;\r\n}\r\n\r\n.search-weather-button img {\r\n  height: 1.5em;\r\n}\r\n\r\n.search-weather-button:active {\r\n  scale: 1.1;\r\n}\r\n\r\n.icon img {\r\n  filter: grayscale(100%) brightness(500%);\r\n}\r\n\r\n.city-name {\r\n  font-size: var(--fs-600);\r\n}\r\n.date-time {\r\n  font-size: var(--fs-200);\r\n}\r\n\r\nmain {\r\n  height: 80%;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n\r\n.weather-secondary {\r\n  list-style: none;\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr 1fr;\r\n  grid-template-rows: 1fr 1fr 1fr;\r\n  gap: 2rem;\r\n}\r\n.property {\r\n  color: rgb(196, 195, 195);\r\n}\r\n.value {\r\n  font-size: var(--fs-500);\r\n}\r\n.weather-main {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n.weather-details {\r\n  display: flex;\r\n  gap: 10vw;\r\n  font-size: var(--fs-400);\r\n}\r\n\r\n.temperature-main {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.temperature-main .temperature {\r\n  font-size: var(--fs-800);\r\n}\r\n\r\n.loading-img {\r\n  display: none;\r\n  position: absolute;\r\n  right: 47%;\r\n  top: 30%;\r\n}\r\n\r\n@media (min-width: 1600px) {\r\n  :root {\r\n    --fs-800: 4.5rem;\r\n    --fs-600: 2.2rem;\r\n    --fs-500: 1.8rem;\r\n    --fs-400: 1.7rem;\r\n    --fs-200: 1.1rem;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
+
+@media (max-width: 550px) {
+  :root {
+    --fs-800: 2.1rem;
+    --fs-600: 0.9rem;
+    --fs-500: 0.6rem;
+    --fs-400: 0.7rem;
+    --fs-200: 0.4rem;
+  }
+  .search-weather-input {
+    width: 140px;
+  }
+  .search-weather-button img {
+    height: 1em;
+  }
+  .temp-toggle label {
+    height: 1.5rem;
+    width: 4rem;
+  }
+}
+
+@media (max-width: 450px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .weather-details {
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .weather-details div {
+    align-self: center;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  .search-weather-section,
+  .search-weather-section div {
+    float: none;
+  }
+  .search-weather-section {
+    align-self: center;
+  }
+  .error {
+    position: absolute;
+    right: 47%;
+    top: 30%;
+  }
+}
+
+@media (max-height: 580px) {
+  .weather-secondary {
+    gap: 0.2rem;
+  }
+}
+`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAEA;EACE,cAAc;EACd,gBAAgB;EAChB,gBAAgB;EAChB,gBAAgB;EAChB,gBAAgB;AAClB;AACA;EACE,SAAS;EACT,UAAU;EACV,sBAAsB;AACxB;;AAEA;EACE,2CAA2C;EAC3C,aAAa;EACb,yDAAyC;EACzC,sBAAsB;EACtB,4BAA4B;EAC5B,YAAY;EACZ,iBAAiB;EACjB,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,aAAa;EACb,WAAW;AACb;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,WAAW;EACX,UAAU;EACV,2BAA2B;EAC3B,WAAW;EACX,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,wBAAwB;EACxB,iBAAiB;EACjB,eAAe;EACf,8BAA8B;AAChC;;AAEA;EACE,sBAAsB;AACxB;AACA;EACE,YAAY;AACd;;AAEA;EACE,YAAY;EACZ,8BAA8B;EAC9B,cAAc;AAChB;AACA;EACE,gBAAgB;AAClB;AACA;EACE,gBAAgB;EAChB,6BAA6B;EAC7B,aAAa;EACb,YAAY;EACZ,YAAY;EACZ,wBAAwB;EACxB,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;EAChB,YAAY;AACd;;AAEA;EACE,uBAAuB;EACvB,YAAY;EACZ,eAAe;AACjB;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,UAAU;AACZ;;AAEA;EACE,wCAAwC;AAC1C;;AAEA;EACE,wBAAwB;AAC1B;AACA;EACE,wBAAwB;AAC1B;;AAEA;EACE,WAAW;EACX,aAAa;EACb,sBAAsB;EACtB,uBAAuB;EACvB,WAAW;AACb;;AAEA;EACE,gBAAgB;EAChB,aAAa;EACb,qCAAqC;EACrC,kCAAkC;EAClC,SAAS;AACX;AACA;EACE,yBAAyB;AAC3B;AACA;EACE,wBAAwB;AAC1B;AACA;EACE,aAAa;EACb,sBAAsB;AACxB;AACA;EACE,aAAa;EACb,sBAAsB;EACtB,uBAAuB;AACzB;AACA;EACE,aAAa;EACb,SAAS;EACT,wBAAwB;AAC1B;;AAEA;EACE,aAAa;EACb,mBAAmB;AACrB;;AAEA;EACE,wBAAwB;AAC1B;;AAEA;EACE,aAAa;EACb,kBAAkB;EAClB,UAAU;EACV,QAAQ;AACV;;AAEA;EACE;IACE,gBAAgB;IAChB,gBAAgB;IAChB,gBAAgB;IAChB,gBAAgB;IAChB,gBAAgB;EAClB;AACF;;AAEA;EACE;IACE,gBAAgB;IAChB,gBAAgB;IAChB,gBAAgB;IAChB,gBAAgB;IAChB,gBAAgB;EAClB;EACA;IACE,YAAY;EACd;EACA;IACE,WAAW;EACb;EACA;IACE,cAAc;IACd,WAAW;EACb;AACF;;AAEA;EACE;IACE,aAAa;IACb,sBAAsB;EACxB;EACA;IACE,sBAAsB;IACtB,SAAS;EACX;EACA;IACE,kBAAkB;EACpB;EACA;IACE,aAAa;IACb,sBAAsB;IACtB,SAAS;IACT,mBAAmB;EACrB;EACA;;IAEE,WAAW;EACb;EACA;IACE,kBAAkB;EACpB;EACA;IACE,kBAAkB;IAClB,UAAU;IACV,QAAQ;EACV;AACF;;AAEA;EACE;IACE,WAAW;EACb;AACF","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Fasthand&family=Nunito&family=Roboto&display=swap');\r\n\r\n:root {\r\n  --fs-800: 3rem;\r\n  --fs-600: 1.5rem;\r\n  --fs-500: 1.2rem;\r\n  --fs-400: 1.1rem;\r\n  --fs-200: 0.7rem;\r\n}\r\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  font-family: 'Nunito', 'Roboto', sans-serif;\r\n  height: 100vh;\r\n  background-image: url('../assets/bg.jpg');\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\r\n  color: white;\r\n  font-weight: bold;\r\n  padding: 1em;\r\n  overflow: hidden;\r\n}\r\n\r\n.temp-toggle {\r\n  display: flex;\r\n  gap: 0.5rem;\r\n}\r\n\r\ninput[name='temp-in'] {\r\n  appearance: none;\r\n}\r\n\r\n.temp-toggle label {\r\n  height: 2em;\r\n  width: 5em;\r\n  background: rgb(27, 23, 23);\r\n  color: gold;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  font-size: var(--fs-500);\r\n  border-radius: 5%;\r\n  cursor: pointer;\r\n  box-shadow: 2px 2px 10px black;\r\n}\r\n\r\ninput[name='temp-in']:checked + label {\r\n  border: 1px solid gold;\r\n}\r\n.search-weather-section {\r\n  float: right;\r\n}\r\n\r\n.search-weather-section div {\r\n  float: right;\r\n  border-bottom: 3px solid white;\r\n  padding: 0.2em;\r\n}\r\n.error {\r\n  margin-top: 3rem;\r\n}\r\n.search-weather-input {\r\n  appearance: none;\r\n  background-color: transparent;\r\n  outline: none;\r\n  border: none;\r\n  color: white;\r\n  font-size: var(--fs-400);\r\n  width: 180px;\r\n  font-weight: 600;\r\n}\r\n\r\n.search-weather-input::placeholder {\r\n  font-weight: 600;\r\n  color: white;\r\n}\r\n\r\n.search-weather-button {\r\n  background: transparent;\r\n  border: none;\r\n  cursor: pointer;\r\n}\r\n\r\n.search-weather-button img {\r\n  height: 1.5em;\r\n}\r\n\r\n.search-weather-button:active {\r\n  scale: 1.1;\r\n}\r\n\r\n.icon img {\r\n  filter: grayscale(100%) brightness(500%);\r\n}\r\n\r\n.city-name {\r\n  font-size: var(--fs-600);\r\n}\r\n.date-time {\r\n  font-size: var(--fs-200);\r\n}\r\n\r\nmain {\r\n  height: 80%;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  width: 100%;\r\n}\r\n\r\n.weather-secondary {\r\n  list-style: none;\r\n  display: grid;\r\n  grid-template-columns: repeat(3, 1fr);\r\n  grid-template-rows: repeat(3, 1fr);\r\n  gap: 2rem;\r\n}\r\n.property {\r\n  color: rgb(196, 195, 195);\r\n}\r\n.value {\r\n  font-size: var(--fs-500);\r\n}\r\n.weather-main {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n.weather-details div {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n.weather-details {\r\n  display: flex;\r\n  gap: 10vw;\r\n  font-size: var(--fs-400);\r\n}\r\n\r\n.temperature-main {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n.temperature-main .temperature {\r\n  font-size: var(--fs-800);\r\n}\r\n\r\n.loading-img {\r\n  display: none;\r\n  position: absolute;\r\n  right: 47%;\r\n  top: 30%;\r\n}\r\n\r\n@media (max-width: 950px) {\r\n  :root {\r\n    --fs-800: 2.5rem;\r\n    --fs-600: 1.2rem;\r\n    --fs-500: 0.8rem;\r\n    --fs-400: 0.9rem;\r\n    --fs-200: 0.5rem;\r\n  }\r\n}\r\n\r\n@media (max-width: 550px) {\r\n  :root {\r\n    --fs-800: 2.1rem;\r\n    --fs-600: 0.9rem;\r\n    --fs-500: 0.6rem;\r\n    --fs-400: 0.7rem;\r\n    --fs-200: 0.4rem;\r\n  }\r\n  .search-weather-input {\r\n    width: 140px;\r\n  }\r\n  .search-weather-button img {\r\n    height: 1em;\r\n  }\r\n  .temp-toggle label {\r\n    height: 1.5rem;\r\n    width: 4rem;\r\n  }\r\n}\r\n\r\n@media (max-width: 450px) {\r\n  body {\r\n    display: flex;\r\n    flex-direction: column;\r\n  }\r\n  .weather-details {\r\n    flex-direction: column;\r\n    gap: 5rem;\r\n  }\r\n  .weather-details div {\r\n    align-self: center;\r\n  }\r\n  header {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 1rem;\r\n    align-items: center;\r\n  }\r\n  .search-weather-section,\r\n  .search-weather-section div {\r\n    float: none;\r\n  }\r\n  .search-weather-section {\r\n    align-self: center;\r\n  }\r\n  .error {\r\n    position: absolute;\r\n    right: 47%;\r\n    top: 30%;\r\n  }\r\n}\r\n\r\n@media (max-height: 580px) {\r\n  .weather-secondary {\r\n    gap: 0.2rem;\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -989,4 +1053,4 @@ searchWeatherInput.addEventListener('keydown', renderWeather);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.b5579cfb6510e84049ba.js.map
+//# sourceMappingURL=main.12ea57e18b3ac78ff590.js.map
